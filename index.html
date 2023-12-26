@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" style="background-color: #fff;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《艾肯娛樂》發現快樂9在艾肯</title>
+
+  <!--Icon-->
+  <link rel="icon" href="//www.icantw.com/favicon.ico" type="image/x-icon" />
+
+  <!--google plus info-->
+  <meta itemprop="name" content="《艾肯娛樂》發現快樂9在艾肯">
+  <meta itemprop="image" content="./image/seo_1280.jpg">
+  <meta name="description"
+    content="拼圖共計25塊，活動期間內玩家點擊【每日打卡】，可以隨機獲得一塊拼圖與50金幣。活動期間內，儲值至艾肯娛樂所有遊戲內，只要累積1,000元即可獲得1次【獲得拼圖】次數">
+
+  <!--FB info-->
+  <meta property="og:title" content="《艾肯娛樂》發現快樂9在艾肯">
+  <meta name="og:site_name" content="《艾肯娛樂》發現快樂9在艾肯">
+  <meta property="og:url" content="https://goc.icantw.com">
+  <meta property="og:image" content="./image/seo_1280.jpg">
+  <meta property="og:description"
+    content="拼圖共計25塊，活動期間內玩家點擊【每日打卡】，可以隨機獲得一塊拼圖與50金幣。活動期間內，儲值至艾肯娛樂所有遊戲內，只要累積1,000元即可獲得1次【獲得拼圖】次數">
+  <meta property="og:type" content="website">
+  <meta itemprop="seo_keywords" content="艾肯娛樂、周年慶、拼圖、遊戲、熊寶、熊美、慶典、節日、2022、艾肯、娛樂">
+
+  <!-- css -->
+  <link rel="stylesheet" href="./css/animate.min.css">
+  <link rel="stylesheet" href="./css/animate.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/all.css">
+</head>
+
+<body style="background-color: #fff;">
+  <div class="visual">
+    <div class="main-title">
+      <img src="./image/9years.png" alt="" class="years-icon">
+      <div class="title-body">
+        <img src="./image/star2.png" alt="" class="star01">
+        <img src="./image/star2.png" alt="" class="star02">
+        <img src="./image/star2.png" alt="" class="star03">
+        <img src="./image/star2.png" alt="" class="star04">
+        <img src="./image/title.png" alt="" class="visual-title">
+      </div>
+      <a href="./page.html" class="btn-enter">
+        <img src="./image/btn_enter.png" alt="" class="mu_btn mu_btn-active">
+      </a>
+    </div>
+    <div class="cover"></div>
+    <!--PC影片背景-->
+    <!--加入playsinline 可在ios播放-->
+    <div class="videoArea">
+      <video id="homeVideo" autoplay loop muted playsinline>
+        <source src="video/001.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</body>
+
+<script src="./js/jquery-3.6.0.min.js"></script>
+
+<!-- all js -->
+<script src="./js/all.js"></script>
+<script>
+  $(function () {
+    $(".btn-enter").click(function (e) {
+      e.preventDefault();
+      $('.visual').fadeOut(3000, newpage); // 點選後淡出並執行newpage函式
+    });
+  });
+  function newpage() {
+    $(window).attr('location', 'page.html'); // 後面放要跳轉的頁面
+  }
+</script>
+
+</html>

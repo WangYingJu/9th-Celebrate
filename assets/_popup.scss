@@ -1,0 +1,410 @@
+/* popup基本預設設定 不用動 */
+.popup-wrap {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  content: "";
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 150;
+}
+
+.popup-wrap2 {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  content: "";
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 151;
+}
+
+.popup-wrap3 {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  content: "";
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 152;
+}
+
+.popup-box {
+  width: 100%;
+  transform: translate(-50%, -50%) scale(1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* 自己的popup樣式 */
+.pop-body {
+  position: relative;
+  .content {
+    width: 650px;
+    height: 700px;
+    padding: 30px 24px;
+    background: url("../image/dot.png") repeat center;
+    background-size: 100%;
+    background-color: $pink;
+    border: 3px solid $yellow;
+    border-radius: 30px;
+    transform: translate(-50%, -50%) scale(1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    @include mobile() {
+      width: 6.5rem;
+      height: 9.5rem;
+      padding: 0.3rem 0.24rem;
+      border-radius: 0.3rem;
+    }
+  }
+  .small {
+    height: 340px;
+    @include mobile() {
+      height: 4.5rem;
+    }
+  }
+  h2 {
+    font-size: 46px;
+    font-weight: bold;
+    color: $purpleDark;
+    margin-bottom: 0.16rem;
+    @include mobile() {
+      font-size: 0.65rem;
+      margin-bottom: 0.08rem;
+    }
+  }
+  h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: $color;
+    @include mobile() {
+      font-size: 0.42rem;
+    }
+  }
+  h4 {
+    font-size: 24px;
+    color: $fontDark;
+    @include mobile() {
+      font-size: 0.36rem;
+    }
+  }
+  .title {
+    font-size: 40px;
+    color: $color;
+    @include mobile() {
+      font-size: 0.42rem;
+    }
+  }
+  select {
+    /* Reset Select */
+    appearance: none; // 預設arrow
+    -moz-appearance:none;  
+    -webkit-appearance:none;  
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    width: 100%;
+    padding: 4px 4px 4px 24px;
+    font-size: 24px;
+    text-align: left;
+    color: $fontDark;
+    background-color: $color;
+    // background-image: none;
+    cursor: pointer;
+    @include mobile() {
+      font-size: 0.32rem;
+    }
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+  display: none;
+}
+  .select {
+    position: relative;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 12px 0 16px 0;
+    @include mobile() {
+      margin: 0.24rem 0;
+    }
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate(-50%, -50%) scale(1);
+    padding: 0;
+    color: $pink;
+    font-size: 8px;
+    background-color: $color;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  .mt-2 {
+    margin-top: -8px;
+  }
+
+  .mt-5 {
+    margin-top: 20px;
+    @include mobile() {
+      margin-top: 0.24rem;
+    }
+  }
+  .mt-13 {
+    margin-top: 36px;
+    @include mobile() {
+      margin-top: 0.6rem;
+    }
+  }
+  .mt-14 {
+    margin-top: 56px;
+  }
+  .mt-18 {
+    margin-top: -70px;
+  }
+  .mt-20 {
+    margin-top: 80px;
+    @include mobile() {
+      margin-top: 1.2rem;
+    }
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    img {
+      width: 95%;
+      margin: 0 auto;
+      @include mobile() {
+        width: 100%;
+      }
+      &:hover {
+        transform: translateY(-8px);
+        transition: 0.3s;
+      }
+    }
+  }
+  .white-body {
+    background-color: $color;
+    border-radius: 20px;
+    padding: 24px;
+    @include mobile() {
+      padding: 0.24rem;
+      border-radius: 0.2rem;
+    }
+  }
+  .white-body-record {
+    background-color: $color;
+    border-radius: 20px;
+    padding: 24px;
+    height: 560px;
+    @include mobile() {
+      padding: 0.24rem;
+      height: 7.75rem;
+      border-radius: 0.2rem;
+    }
+    .bar {
+      padding-right: 8px;
+      overflow-y: scroll;
+      height: 515px;
+      @include mobile() {
+        height: 7.2rem;
+      }
+    }
+  }
+  .note-body {
+    width: 100%;
+    height: 200px;
+    padding: 8px 16px;
+    background-color: $color;
+    border-radius: 20px;
+    @include mobile() {
+      height: 3.7rem;
+      border-radius: 0.2rem;
+    }
+    .note {
+      height: 140px;
+      overflow-y: scroll;
+      font-size: 16px;
+      color: $fontDark;
+      padding: 8px 16px;
+      list-style: decimal;
+      @include mobile() {
+        font-size: 0.28rem;
+        height: 2.8rem;
+      }
+      li {
+        text-align: left;
+        margin-left: 16px;
+      }
+    }
+  }
+  .bear {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    @include mobile() {
+      width: 4rem;
+      left: 0px;
+    }
+  }
+  .storeEvent {
+    width: 250px;
+    position: absolute;
+    bottom: 90px;
+    right: 60px;
+    @include mobile() {
+      width: 3rem;
+      bottom: 30px;
+      right: 30px;
+    }
+    &:hover {
+      transform: scale(0.9);
+      transition: 0.5s;
+    }
+  }
+  .tb_rwd{
+    width: 100%;
+    thead {
+      @include mobile() {
+        display: none
+      }
+      th {
+        background-color: $pink;
+        color: #fff;
+        text-align: center;
+        padding: 5px;
+        font-size: 20px;
+        border-left: 2px solid $color;
+      }
+    }
+    tbody {
+      font-size: 18px;
+      color: $fontDark;
+      @include mobile() {
+        width: 100%;
+        font-size: 0.32rem;
+      }
+      tr {
+        border-bottom: 1px solid $pink;
+        @include mobile() {
+          display: block;
+          border: 2px solid $pink;
+        }
+      }
+      tr + tr {
+        @include mobile() {
+          border-top: unset;
+        }
+      }
+      td {
+        padding: 8px;
+        @include mobile() {
+          padding: 0;
+        }
+        &[data-th] {
+          @include mobile() {
+            text-align: left;
+            display: block;
+            padding: 0;
+          }
+          &:before {
+            @include mobile() {
+              content: attr(data-th);
+              display: inline-block;
+              white-space: pre;
+              width: 35%;
+              text-align: left;
+              padding: 2px 5px;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(63, 34, 20, 0.1);
+    border-radius: 50px;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $pink;
+    border-radius: 50px;
+  }
+}
+
+
+/* 關閉按鈕樣式 */
+.close-btn {
+  width: 60px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  transition: 0.5s;
+  @include mobile() {
+    width: 48px;
+  }
+}
+
+.close-btn:hover {
+  transform: translate(50%, -50%) rotate(270deg);
+}
+
+.close-box {
+  a {
+    :hover {
+      transform: scale(0.9);
+      transition: 0.5s;
+    }
+    img {
+      margin: 0 auto;
+      margin-top: 16px;
+      @include mobile() {
+        width: 60%;
+        margin-top: 0.16rem;
+      }
+    }
+  }
+}
+
+.transform-in,
+.transform-out {
+  display: block;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.transform-in {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.transform-out {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}

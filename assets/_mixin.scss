@@ -1,0 +1,33 @@
+$color: white;
+$yellow: #ffdb82;
+$primary: #85dce7;
+$pink: #ffc6d7;
+$fontYellow: #fcecbc;
+$fontDark: #4c4c4c;
+$purple: #976bff;
+$purpleDark: #764855;
+
+
+@mixin mobile {
+  @media (max-width:750px) {
+    @content;
+  }
+}
+
+@mixin table {
+  @media (max-width:820px) {
+    @content;
+  }
+}
+
+@mixin windowXL {
+  @media (max-width:1200px) {
+    @content;
+  }
+}
+
+@mixin windowXXL {
+  @media (max-width:1500px) {
+    @content;
+  }
+}

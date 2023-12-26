@@ -1,0 +1,33 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  color: $fontDark;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+  // position: relative;
+  background: url("../image/PC_bg.jpg") no-repeat center top;
+  background-size: contain;
+  width: 100%;
+  @include mobile() {
+    background: url("../image/SP_bg.jpg") no-repeat center top;
+    width: 100%;
+    background-size: cover;
+  }
+}
+
+html {
+  background-color: #d0fefe;
+  overflow-x: hidden;
+  /*當 100vw = 1920px 時，除以 19.2 可以讓 font-size 變成 100px
+      在其他屬性時，原先使用 px 單位改成 rem，就可以隨螢幕尺寸等比例縮放
+      例如：24px 的字，寫成 0.24rem*/
+  font-size: calc(100vw / 19.2);
+  @include mobile() {
+    font-size: calc(100vw / 7.5);
+  }
+}

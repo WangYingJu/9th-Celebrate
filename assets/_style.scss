@@ -1,0 +1,468 @@
+// uitli
+.pc-d-none {
+  display: none !important;
+  @include table() {
+    display: block !important;
+  }
+}
+.sp-d-none {
+  display: block !important;
+  @include table() {
+    display: none !important;
+  }
+}
+
+// 拼圖區塊
+.main {
+  padding-top: 80px;
+  margin-bottom: 60px;
+  @include table() {
+    margin-bottom: 100px;
+  }
+  @include mobile() {
+    margin-bottom: 4.2rem;
+  }
+  .container {
+    position: relative;
+    width: 850px;
+    margin: 0 auto;
+    @include windowXXL() {
+      width: 8.5rem;
+    }
+    @include table() {
+      width: 70%;
+    }
+    @include mobile() {
+      width: 90%;
+      padding-top: 0.8rem;
+      // padding-bottom: 4rem;
+    }
+  }
+  .puzzle-box {
+    position: relative;
+    z-index: 2;
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 4px solid $pink;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    @include mobile() {
+      padding: 0.28rem;
+      border: 0.04rem solid $pink;
+    }
+    .time {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      .star {
+        width: 40px;
+        @include mobile() {
+          width: 24px;
+        }
+      }
+      h2 {
+        text-align: center;
+        font-size: 32px;
+        color: $purple;
+        font-weight: bold;
+        @include mobile() {
+          font-size: 0.4rem;
+        }
+      }
+    }
+    .puzzle {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px;
+      &-items {
+        width: 18%;
+      }
+    }
+  }
+  .get-iCion {
+    display: block;
+    cursor: unset;
+    img {
+      @include mobile() {
+        width: 60%;
+      }
+      cursor: pointer;
+      margin: 0 auto;
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+// 煙火
+.fireworks01 {
+  position: absolute;
+  z-index: 0;
+  top: 3.5rem;
+  left: -1.8rem;
+  animation: fireworks 2s 2s infinite;
+}
+.fireworks03 {
+  position: absolute;
+  z-index: 0;
+  top: -1rem;
+  left: 4rem;
+  animation: fireworks 2s 2s infinite;
+  @include table() {
+    top: 3.5rem;
+    left: unset;
+    right: -2.5rem;
+  }
+  @include mobile() {
+    width: 3rem;
+    top: -1rem;
+  left: 4rem;
+  }
+}
+
+// 裝飾氣球
+.dec1-1 {
+  position: absolute;
+  z-index: 120;
+  top: 100px;
+  left: -150px;
+  animation: bounce ease-out 3s infinite;
+  -webkit-animation: bounce ease-out 3s infinite;
+  -moz-animation: bounce ease-out 3s infinite;
+  @include windowXXL() {
+    width: 2.5rem;
+  }
+}
+
+.dec1-2 {
+  position: absolute;
+  z-index: 120;
+  top: -70px;
+  right: -0.9rem;
+  animation: bounce ease-out 5s infinite;
+  -webkit-animation: bounce ease-out 5s infinite;
+  -moz-animation: bounce ease-out 5s infinite;
+  @include windowXXL() {
+    width: 2.5rem;
+  }
+}
+
+// 彩帶
+.falling {
+  .page {
+    width: 100%;
+  }
+  .dot{
+    position: absolute;
+    // z-index: 120;
+    width: 30px;
+    height: 30px;
+    background: url("../image/dec1.png") no-repeat;
+    background-size: 100%;
+  }
+}
+
+// 右邊選單
+.right-menu {
+  position: absolute;
+  top: 0;
+  right: -3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include windowXXL() {
+    right: -3.5rem;
+  }
+  @include windowXL() {
+    right: -4.2rem;
+  }
+  @include table() {
+    display: none;
+  }
+  &-box {
+    // width: 240px;
+    padding: 24px;
+    background-color: $primary;
+    border-radius: 30px;
+    h3 {
+      font-size: 26px;
+      color: $color;
+      text-align: center;
+      margin-bottom: 4px;
+      @include windowXL() {
+        font-size: 20px;
+      }
+    }
+    p {
+      width: 100%;
+      padding: 4px;
+      font-size: 24px;
+      text-align: center;
+      line-height: 1;
+      background-color: $color;
+      border-radius: 8px;
+      @include windowXL() {
+        font-size: 20px;
+      }
+    }
+  }
+  .dec2 {
+    width: 120px;
+    margin-top: -10px;
+  }
+  .menu {
+    padding: 24px;
+    background: url("../image/dot.png") repeat center;
+    background-size: 300%;
+    background-color: $primary;
+    border-radius: 30px;
+    & li + li {
+      margin-top: 12px;
+    }
+    a {
+      color: #fff;
+    }
+    &-item {
+      position: relative;
+      font-size: 24px;
+      text-align: center;
+      padding: 4px 8px;
+      @include windowXL() {
+        font-size: 20px;
+      }
+      &::before {
+        content: url("../image/beer_foot.png");
+        position: absolute;
+        z-index: 99;
+        top: -18px;
+        left: -15px;
+        opacity: 0;
+      }
+      &:hover {
+        background-color: #fff;
+        border-radius: 8px;
+        a {
+          color: #43b4e0;
+        }
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// 下方資訊欄
+.down-info {
+  position: relative;
+  margin-bottom: 80px;
+  .get-puzzle {
+    width: 3.6rem;
+    position: absolute;
+    z-index: 5;
+    top: -3.8rem;
+    left: 2rem;
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+    }
+    @include windowXL() {
+    width: 4.5rem;
+    top: -4.2rem;
+    left: 1rem;
+    }
+    @include table() {
+    width: 6rem;
+    top: -6rem;
+    left: 0rem;
+    }
+    @include mobile() {
+      width: 4.5rem;
+      top: -4.2rem;
+      left: 0.3rem;
+    }
+  }
+  .daily_check {
+    width: 1.7rem;
+    position: absolute;
+    z-index: 5;
+    top: -2.45rem;
+    right: 2.5rem;
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+    }
+    @include windowXL() {
+    width: 2.2rem;
+    right: 2rem;
+    }
+    @include table() {
+      width: 3rem;
+      top: -3.8rem;
+      right: 1rem;
+    }
+    @include mobile() {
+      width: 2.1rem;
+      top: -2.5rem;
+      right: 0.7rem;
+    }
+  }
+  .container {
+    width: 14rem;
+    margin: 0 auto;
+    @include windowXXL() {
+    width: 90%;
+    }
+  }
+  .info {
+    padding: 0.3rem 0.4rem;
+    background-color: rgba(133, 220, 231, 0.8);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    @include windowXXL() {
+      padding: 0.6rem 24px;
+    }
+    @include mobile() {
+      padding: 1rem 0.24rem;
+    }
+    & li:nth-child(1) {
+      display: none;
+      @include table() {
+        display: block;
+        width: 100%;
+      }
+    }
+    & li:nth-child(2) {
+      width: 33%;
+      @include windowXXL() {
+      width: 48%;
+      }
+      @include table() {
+        width: 100%;
+      }
+    }
+    .flex-box {
+      width: 20%;
+      @include windowXXL() {
+        width: 48%;
+      }
+      @include table() {
+        width: 100%;
+      }
+    }
+    .sub {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .icon {
+        width: 50px;
+        @include mobile() {
+          width: 0.75rem;
+        }
+      }
+      h3 {
+        line-height: 1;
+        font-size: 26px;
+        color: $color;
+        @include mobile() {
+          font-size: 0.42rem;
+        }
+      }
+      .logInOut {
+        height: 50px;
+        margin-left: auto;
+        &:hover {
+          transform: scale(1.05);
+          transition: 0.5s;
+        }
+        @include windowXXL() {
+          height: 40px;
+        }
+        @include mobile() {
+          height: 0.55rem;
+        }
+      }
+    }
+    p {
+      width: 100%;
+      padding: 4px;
+      border-radius: 8px;
+      background-color: $color;
+      color: $fontDark;
+      font-size: 22px;
+      text-align: center;
+      @include windowXXL() {
+      font-size: 22px;
+      }
+      @include mobile() {
+        font-size: 0.36rem;
+      }
+    }
+  }
+}
+
+.footer {
+  color: $color;
+  padding: 24px;
+  background-color: $primary;
+  @include mobile() {
+    padding: 0.3rem 0.6rem;
+  }
+  .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.24rem;
+    .ican-logo {
+      width: 1.5rem;
+      @include table() {
+        width: 2.5rem;
+      }
+      @include mobile() {
+        width: 1.5rem;
+      }
+    }
+    .all-right {
+      font-size: 16px;
+      line-height: 1.2;
+      @include mobile() {
+        font-size: 0.24rem;
+      }
+    }
+    .age15 {
+      width: 0.6rem;
+      @include table() {
+        width: 1rem;
+      }
+      @include mobile() {
+        width: 0.5rem;
+      }
+    }
+  }
+}
+
+
+// 動畫
+@keyframes fireworks {
+  0% {
+      transform: scale(0);
+  }
+
+  80% {
+      transform: scale(1);
+  }
+
+  100% {
+      opacity: 0;
+  }
+}
